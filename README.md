@@ -60,9 +60,4 @@ Enter month and day "01-01": 01-01
 ```
 
 
-Screenshot Guide
-
-![steps](guide/step-guide.png)
-
-
 
