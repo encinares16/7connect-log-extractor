@@ -31,11 +31,11 @@ cd application
    To clone the project, and install dependencies, type the following commands
 
 ```bash
-git clone https://github.com/encinares16/log-file-extractor.git
+git clone https://github.com/encinares16/7connect-log-extractor.git
 ```
 
 ```bash
-cd log-file-extractor
+cd 7connect-log-extractor
 ```
 
 Installing dependencies
@@ -46,8 +46,7 @@ npm install
 
 **3. Run the application**
 
-1. Extract specific LOG file (e.g. q2.2024-08-08.log) and move inside log-file-extractor directory.
-2. Have specific seven pay id (e.g. 2422-0069-8133)
+1. Extract specific LOG file (e.g. 7pay.log_2024-01-01.log) and move inside project directory.
 
 Run the application, type
 
@@ -57,10 +56,7 @@ node app.js
 
 Then input, 
 ```cmd
-Enter 7connect reference: 2422-0069-8133
-Input log file to extract: q2.2024-08-08.log
-Create new directory, choice: 2
-View transaction logs, choice: 1
+Enter month and day "01-01": 01-01
 ```
 
 
