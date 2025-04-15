@@ -3,6 +3,8 @@ import readline from 'readline';
 import path from 'path'
 import users from './users.js'
 import promptSync from 'prompt-sync';
+
+import regex from './helpers/regex.js';
 const prompt = promptSync();
 
 let monthInput = prompt('Enter 7pay.logs date, (month "01-12"): ')
@@ -43,7 +45,7 @@ async function extract(){
     readlines.on('line', (line) => {
         users.map(user => {
             if(user.isCreated){
-                if(line.match(user.username)){
+                if(line.match(user.username) && !line.match(regex['user-none'])){
                     user.count++
                     fs.appendFileSync(`${user.company}\\${user.name} - ${user.username}\\${subDirectory}\\${file.split('_').pop()}-${user.username}.txt`, `${line}\n`, 'utf-8');
                 }
