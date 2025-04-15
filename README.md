@@ -1,4 +1,4 @@
-# 7connect Log Extractor
+# 7connect User Logs
 
 This guide will walk you through the steps to clone a repository, install dependencies, and run the application.
 
@@ -31,11 +31,11 @@ cd application
    To clone the project, and install dependencies, type the following commands
 
 ```bash
-git clone https://github.com/encinares16/7connect-log-extractor.git
+git clone https://github.com/encinares16/7connect-user-logs.git 
 ```
 
 ```bash
-cd 7connect-log-extractor
+cd 7connect-user-logs
 ```
 
 Installing dependencies
@@ -56,8 +56,9 @@ node app.js
 
 Then input, 
 ```cmd
-Enter month and day "01-01": 01-01
+Enter 7pay.logs date, (month "01-12"): 01
+Enter 7pay.logs date, (day "01-31"): 01
 ```
-
+![add references](guide/guide.png)
 
 
