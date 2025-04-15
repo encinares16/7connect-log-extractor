@@ -5,14 +5,16 @@ import users from './users.js'
 import promptSync from 'prompt-sync';
 const prompt = promptSync();
 
-let day = prompt('Enter month and day "01-01": ')
-let file = `7pay.log_2024-${day}`
-let month = '2024-01'
+let monthInput = prompt('Enter 7pay.logs date, (month "01-12"): ')
+let dayInput = prompt('Enter 7pay.logs date, (day "01-31") : ')
+let file = `7pay.log_2024-${monthInput}-${dayInput}`
+let subDirectory = `2024-${monthInput}`;
 
 async function extract(){
     const filestream = fs.createReadStream(file);
     const readlines = readline.createInterface({
         input: filestream,
+        
         crlfDelay: Infinity
     });
     const createDirectory = (dirPath) => {
@@ -31,7 +33,7 @@ async function extract(){
 
     users.forEach(async (data) => {
         try {
-            let directory = path.join(data.company, `${data.name} - ${data.username}`, month);
+            let directory = path.join(data.company, `${data.name} - ${data.username}`, subDirectory);
             await createDirectory(directory);
         } catch (error) {
             console.error(`\n[ERROR] Failed to create directory: ${error.message}\n`);
@@ -43,7 +45,7 @@ async function extract(){
             if(user.isCreated){
                 if(line.match(user.username)){
                     user.count++
-                    fs.appendFileSync(`${user.company}\\${user.name} - ${user.username}\\${month}\\${file.split('_').pop()}-${user.username}.txt`, `${line}\n`, 'utf-8');
+                    fs.appendFileSync(`${user.company}\\${user.name} - ${user.username}\\${subDirectory}\\${file.split('_').pop()}-${user.username}.txt`, `${line}\n`, 'utf-8');
                 }
             }
         })
