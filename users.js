@@ -128,3 +128,12 @@ let users = [
 ]
 
 export default users
+
+/*
+    OLD USER            DATE CREATED    LAST UPDATE     CHANGE USER/NEW
+    jonroque            5/9/24          5/9/24          NO
+    encinares16         5/13/24         6/27/2024       YES / encinares
+    Neil                6/26/24         6/26/24         NO
+    jennikardm          7/31/24         4/14/2025       NO
+    charina.castillano  8/30/24         2/25/2025       NO
+*/ 
